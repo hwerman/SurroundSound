@@ -9,15 +9,13 @@
 <body>
   <h1>surround sound</h1>
     <form action="/search" id="searchForm" method="get">
-      <input type="text" name="search" placeholder="Enter a movie title here">
+      <input type="text" name="cinema" placeholder="Enter a movie title here">
       <input type="submit" value="Find the soundtrack">
     </form>
     <h2>tunes</h2>
-      <% songs.forEach((one) => {%>
+      <% tracks.forEach((one) => {%>
         <div class="filmParts">
           <p class ="trackName"><%= one.name %></p>
-            <p class ="artistName">Artist: <%=one.artist.name%></p>
-            <a href="<%=one.preview_url%>">Listen here%></a>
         </div>
       <% }) %>
 </body>
