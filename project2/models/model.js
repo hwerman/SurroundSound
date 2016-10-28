@@ -1,11 +1,11 @@
-// const { MongoClient } = require('mongodb');
-// const { ObjectID } = require('mongodb');
+const { MongoClient } = require('mongodb');
+const { ObjectID } = require('mongodb');
 
 // // HJW database information: store the info of the songs that
 // // the user wants to revisit - the songs that the user adds
 // // to the personal collection at the bottom
 
-// const dbConnection = 'mongodb://localhost:27017/surroundsound'
+const dbConnection = 'mongodb://localhost:27017/surroundsound'
 
 // function accessFaves(req, res, next) {
 //   MongoClient.connect(dbConnection, (err, db) => {
