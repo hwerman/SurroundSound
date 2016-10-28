@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hwerman/grtgProject#readme",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "ejs": "^2.5.2",

@@ -1,0 +1,24 @@
+*{
+  font-family: helvetica;
+}
+
+a{
+  color: #aaaaaa;
+}
+
+#searchForm{
+
+}
+
+.filmParts{
+border: 2px solid #000000;
+margin: 10px 5px;
+}
+
+.artistName{
+  color: lawngreen;
+}
+
+.trackName{
+  font-weight: bolder;
+}

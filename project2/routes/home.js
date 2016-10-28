@@ -1,13 +1,17 @@
 const router = require('express').Router();
-const dbService = require('../services/apiFile');
+const dbService = require('../services/services');
 
 router.get('/', dbService.searchSoundtrack, (req, res) => {
-  console.log(res.results)
   res.render(
   'index', {
-    banana: res.results
   });
-  // res.send('this works');
+});
+
+router.get('/search', dbService.searchSoundtrack, (req, res) => {
+  res.render(
+  'search', {
+    songs: res.results,
+  });
 });
 
 module.exports = router;

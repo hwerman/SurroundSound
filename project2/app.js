@@ -8,14 +8,14 @@ const methodOverride = require('method-override');
 
 const member = require('./models/model');
 const guest = require('./models/user');
-const dbService = require('./services/apiFile');
+const dbService = require('./services/services');
 
 const app = express();
 const PORT = process.argv[2] || process.env.PORT || 3000;
 
 const homeRoute = require('./routes/home');
 // const mainRoute = require('./routes/main');
-// const userRoute = require('./routes/user');
+// const userRoute = require('./routes/member');
 
 app.listen(PORT, () => console.warn('Server is listening on port ', PORT));
 
@@ -29,4 +29,4 @@ app.set('views', 'views');
 
 app.use('/', homeRoute);
 // app.use('/main', mainRoute);
-// app.use('/user', userRoute);
+// app.use('/user', memberRoute);
