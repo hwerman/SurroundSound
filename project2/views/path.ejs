@@ -8,18 +8,70 @@
 </head>
 <body>
   <h1>surround sound</h1>
-    <form action="/search" id="searchForm" method="get">
-      <input type="text" name="cinema" placeholder="Enter a movie title here">
-      <input type="submit" value="Find the soundtrack">
-    </form>
+
     <h2>tunes</h2>
-      <% tracks.forEach((one) => {%>
-        <div class="filmParts">
-          <p class ="trackName"><%= one.name %></p>
-          <p class ="trackName"><%= one.artist.tunefind_url %></p>
-          <p class ="trackName"><%= one.artist.name %></p>
-          <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
-        </div>
-      <% }) %>
+      <div id="again">
+        <a id="searchAgain" href="/home">Search for another movie soundtrack</a>
+      </div>
+
+      <div id="header">
+        <form action="/home" id="searchFormPost" method="post">
+        </form>
+      </div>
+
+      <div class="flexContainer">
+            <% tracks.forEach((one) => {%>
+              <div class="box">
+                <details>
+                  <summary>Song: <%= one.name %></summary>
+                  <summary>Artist: <%= one.artist.name %></summary>
+                  <summary>Scene: <%= one.scene %></summary>
+                  <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
+                </details>
+              </div>
+            <% }) %>
+      </div>
+
+<div>
+THIS HERE IS THE BREAK
+</div>
+
+
+
+<h1>Search for your favorite albums!</h1>
+  <form action="/soundtrack/search" method="POST">
+    <input type="text" name="searchTerm" placeholder="search for your favorite album">
+    <input type="submit" value="Search">
+  </form>
+  <div id="favorites-container">
+    <h2>Favorites:</h2>
+    <% tracks.forEach((fave) => { %>
+      <div class="fave">
+        <p><%= fave.name %></p>
+        <p><%= fave.artist.name %></p>
+        <form action="/soundtrack/favorites/<%= fave._id %>?_method=DELETE" method="post">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+    <% }) %>
+  </div>
+  <div id="search-results-container">
+    <h2>Search Results:</h2>
+    <% tracks.forEach((one) => { %>
+      <div class="search-results">
+        <p><%= one.name %></p>
+        <p><%= one.artist.name %></p>
+        <form action="/soundtrack/favorites" method="POST">
+          <input type="hidden" name="favorites[collectionName]" value="<%= one.name %>">
+          <input type="hidden" name="favorites[artistName]" value="<%= one.artist.name %>">
+          <input type="hidden" name="favorites[artworkUrl100]" value="<%= one.name %>">
+          <input type="submit" value="SAVE">
+        </form>
+      </div>
+    <% }) %>
+  </div>
+  <a href="/users/profile">Home</a>
+
+
 </body>
 </html>
