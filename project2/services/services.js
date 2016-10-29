@@ -29,9 +29,8 @@ function searchSong(req, res, next){
   console.log('Query: ', req.query.cinema);
   client.movie(req.query.cinema)//client.movie(req.query.search) //HJW this points to the name of the input of the form in ejs file
     .then(function (film) {
-      console.log(film.songs);
+      // console.log(film.songs);
       console.log('film:', film);
-
     res.results = film.songs;
     return next();
 })

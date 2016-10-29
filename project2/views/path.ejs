@@ -16,6 +16,9 @@
       <% tracks.forEach((one) => {%>
         <div class="filmParts">
           <p class ="trackName"><%= one.name %></p>
+          <p class ="trackName"><%= one.artist.tunefind_url %></p>
+          <p class ="trackName"><%= one.artist.name %></p>
+          <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
         </div>
       <% }) %>
 </body>
