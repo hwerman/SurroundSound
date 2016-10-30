@@ -1,5 +1,7 @@
 *{
   font-family: helvetica;
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
 a{
@@ -14,13 +16,40 @@ a{
 
 }
 
+.formz{
+
+}
+.instru{
+  font-size: 12px;
+}
+#welcomeBox{
+  width: 200px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #eeeeee;
+}
+
+#profileBox{
+
+}
+
+.btn{
+
+}
+
+#welcomeNav{
+  color: #eeeeee;
+  align-items: right;
+}
+
 .flexContainer{
 /*  display: flex;
   flex-direction: row;
 */}
 
 .box{
-border: 2px solid #000000;
+border: 2px solid #ffffff;
 margin: 10px 5px;
 
 }

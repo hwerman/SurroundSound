@@ -26,33 +26,38 @@ const client = new Client({});
 // }
 
 //THE NEXT NINE LINES WORK TO GET ALL OF THE FILMS LISTED
- function searchSoundtrack(req, res, next){
+ function searchSoundtrack(req, res, next) {
   console.log('operating');
 
   client.movies(function (err, film){
     if (err) {
       return console.log(err);
     }
-    res.answers = film.movies;
+    res.movies = film.movies;
     return next();
-  });
+  })
+    .catch((err) => {
+      res.error = err;
+      next();
+    });
 }
 
 function searchSong(req, res, next){
-  console.log('Searching');
-  console.log('Query: ', req.query.cinema);
+  console.log('song searching');
+  console.log('query: ', req.query.cinema);
+
   client.movie(req.query.cinema)//client.movie(req.query.search) //HJW this points to the name of the input of the form in ejs file
     .then(function (film) {
       console.log(film.songs);
-      console.log('Film:', film);
+      console.log('film:', film);
     res.results = film.songs;
     return next();
 })
     .catch(console.log.bind(console))
-    .catch((err) => {
-      res.error = err;
-      next();
-    })
+    // .catch((err) => {
+    //   res.error = err;
+    //   next();
+    // })
 }
 
 module.exports = {

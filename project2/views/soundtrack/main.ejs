@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Surround Sound</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>THIS IS THE SOUNDTRACK/MAIN EJS PAGE</h1>
+
+
+    <h2>tunes</h2>
+
+
+    <form action="/soundtrack/search" method="post">
+      <input type="text" name="cinema" placeholder="Enter the film">
+      <input type="submit" value="Find the soundtrack">
+    </form>
+
+      <div class="flexContainer">
+            <% tracks.forEach((one) => {%>
+              <div class="box">
+                <details>
+                  <summary>Song: <%= one.name %></summary>
+                  <summary>Artist: <%= one.artist.name %></summary>
+                  <summary>Scene: <%= one.scene %></summary>
+                  <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
+                </details>
+              </div>
+            <% }) %>
+      </div>
+        <div class="flexContainer">
+            <% tracks.forEach((one) => {%>
+              <div class="box">
+                <details>
+                  <summary>Song: <%= one.name %></summary>
+                  <summary>Artist: <%= one.artist.name %></summary>
+                  <summary>Scene: <%= one.scene %></summary>
+                  <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
+                </details>
+              </div>
+            <% }) %>
+      </div>
+</body>
+</html>

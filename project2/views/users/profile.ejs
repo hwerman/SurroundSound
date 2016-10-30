@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>Profile</title>
-  </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Surround Sound </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
   <body>
-    <h1>Welcome! <%= user.username %></h1>
-    <a href="/soundtrack">Search for a soundtrack</a>
-    <form action="/auth?_method=DELETE" method="post">
-      <input type="submit" value="Logout">
-    </form>
+    <div id="profileBox">
+      <h1>THIS IS THE USERS / PROFILE EJS PAGE.</h1>
+
+      <h1>Welcome, <%= user.username %>!</h1>
+        <button class="btn">
+          <a href="/soundtrack">Search for a soundtrack</a>
+        </button>
+
+        <form action="/auth?_method=DELETE" method="post">
+          <input type="submit" value="Logout">
+        </form>
+
+    </div>
   </body>
 </html>

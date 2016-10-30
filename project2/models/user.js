@@ -1,7 +1,7 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 /* eslint no-param-reassign: ["error", { "props": false }] */
 
-const { objectID } = require('mongodb');
+const { ObjectID } = require('mongodb');
 const { getDB }    = require('../lib/dbConnect.js');
 const bcrypt       = require('bcryptjs');
 
@@ -32,7 +32,7 @@ function getUserById(id) {
   return getDB().then((db) => {
     const promise = new Promise((resolve, reject) => {
       db.collection('users')
-        .findOne({ _id: objectID(id) }, (findError, user) => {
+        .findOne({ _id: ObjectID(id) }, (findError, user) => {
           if (findError) reject(findError);
           db.close();
           resolve(user);
@@ -59,5 +59,5 @@ function getUserByUsername(username) {
 module.exports = {
   createUser,
   getUserById,
-  getUserByUsername,
+  getUserByUsername
 };

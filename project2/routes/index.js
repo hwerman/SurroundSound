@@ -1,31 +1,32 @@
 const express = require('express');
-const router = express.Router();
+const indexRouter = express.Router();
 const dbService = require('../services/services');
 
 // This is the route that serves your '/' homepage
-router.get('/', (req, res) => {
+indexRouter.get('/', (req, res) => {
   res.render('index');
 });
 
-// This route serves your `/signup` form
-router.get('/signup', (req, res) => {
-  res.render('signup');
-});
 // This route serves your `/login` form
-router.get('/login', (req, res) => {
+indexRouter.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/home', (req, res) => {
-  res.render(
-    'home')
+// This route serves your `/signup` form
+indexRouter.get('/signup', (req, res) => {
+  res.render('signup');
 });
 
-router.get('/path', dbService.searchSoundtrack, dbService.searchSong, (req, res) => {
-  res.render(
-  'path', {
-    tracks: res.results,
-  });
-});
+// router.get('/home', (req, res) => {
+//   res.render(
+//     'home')
+// });
 
-module.exports = router;
+// router.get('/path', dbService.searchSoundtrack, dbService.searchSong, (req, res) => {
+//   res.render(
+//   'path', {
+//     tracks: res.results,
+//   });
+// });
+
+module.exports = indexRouter;
