@@ -28,6 +28,7 @@ function saveFavorites(req, res, next) {
     insertObj[key] = req.body[key];
   }
 
+  // Adding userId to insertObj
   insertObj.userId = req.session.userId;
 
   getDB().then((db) => {
