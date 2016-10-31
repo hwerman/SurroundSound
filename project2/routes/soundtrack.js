@@ -14,7 +14,7 @@ router.get('/', authenticate, (req, res) => {
   });
 })
 
-router.post('/search', authenticate, searchSoundtrack, searchSong, getFavorites, (req, res) => {
+router.get('/search', authenticate, searchSoundtrack, searchSong, getFavorites, (req, res) => {
   res.render('soundtrack/ost', {
     user: res.user,
     tracks: res.results || [],
