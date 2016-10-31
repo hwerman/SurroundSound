@@ -4,7 +4,6 @@
 const bcrypt    = require('bcryptjs');
 const userModel = require('../models/user');
 
-
 /**
  * logIn - Middleware to compare password from login form with password
  *         from the user in the DB. If matches, the user Id is stored in the
@@ -33,7 +32,6 @@ function logIn(req, res, next) {
   });
 }
 
-
 /**
  * authenticate - Middleware to protect routes
  *
@@ -57,5 +55,5 @@ function authenticate(req, res, next) {
 
 module.exports = {
   logIn,
-  authenticate
+  authenticate,
 };

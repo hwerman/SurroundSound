@@ -9,38 +9,11 @@
 <body>
   <h1>THIS IS THE SOUNDTRACK/MAIN EJS PAGE</h1>
 
-
     <h2>tunes</h2>
+      <form action="/soundtrack/search" method="post">
+        <input type="text" name="cinema" placeholder="Enter the film">
+        <input type="submit" value="Find the soundtrack">
+      </form>
 
-
-    <form action="/soundtrack/search" method="post">
-      <input type="text" name="cinema" placeholder="Enter the film">
-      <input type="submit" value="Find the soundtrack">
-    </form>
-
-      <div class="flexContainer">
-            <% tracks.forEach((one) => {%>
-              <div class="box">
-                <details>
-                  <summary>Song: <%= one.name %></summary>
-                  <summary>Artist: <%= one.artist.name %></summary>
-                  <summary>Scene: <%= one.scene %></summary>
-                  <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
-                </details>
-              </div>
-            <% }) %>
-      </div>
-        <div class="flexContainer">
-            <% tracks.forEach((one) => {%>
-              <div class="box">
-                <details>
-                  <summary>Song: <%= one.name %></summary>
-                  <summary>Artist: <%= one.artist.name %></summary>
-                  <summary>Scene: <%= one.scene %></summary>
-                  <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
-                </details>
-              </div>
-            <% }) %>
-      </div>
 </body>
 </html>

@@ -5,7 +5,7 @@ const { ObjectID } = require('mongodb');
 const { getDB }    = require('../lib/dbConnect.js');
 const bcrypt       = require('bcryptjs');
 
-const SALTROUNDS = 10;
+const CINEMATOGRAPHY = 10;
 
 function createUser(req, res, next) {
   const userObject = {
@@ -13,7 +13,7 @@ function createUser(req, res, next) {
     email: req.body.user.email,
 
     // Store hashed password
-    password: bcrypt.hashSync(req.body.user.password, SALTROUNDS)
+    password: bcrypt.hashSync(req.body.user.password, CINEMATOGRAPHY)
   };
 
   getDB().then((db) => {
@@ -59,5 +59,5 @@ function getUserByUsername(username) {
 module.exports = {
   createUser,
   getUserById,
-  getUserByUsername
+  getUserByUsername,
 };

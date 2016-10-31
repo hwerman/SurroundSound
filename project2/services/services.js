@@ -26,14 +26,15 @@ const client = new Client({});
 // }
 
 //THE NEXT NINE LINES WORK TO GET ALL OF THE FILMS LISTED
+//also searchSoundtrack and searchSong are based on the formatting of the built in functions for the tunefind API
  function searchSoundtrack(req, res, next) {
   console.log('operating');
 
-  client.movies(function (err, film){
+  client.movies(function (err, film) {
     if (err) {
       return console.log(err);
     }
-    res.movies = film.movies;
+    res.answers = film.movies;
     return next();
   })
     .catch((err) => {
@@ -68,8 +69,6 @@ module.exports = {
   // searchMovie,
   // searchSongs,
 };
-
-
 
 // function searchMusic(req, res, next) {
 //   fetch(`${API_URL}term=${req.body.searchTerm}&entity=album&medium=music`)

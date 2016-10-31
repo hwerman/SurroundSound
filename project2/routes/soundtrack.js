@@ -12,13 +12,14 @@ router.get('/', authenticate, (req, res) => {
     tracks: res.results || [],
     favorites: res.favorites || []
   });
-});
+})
 
 router.post('/search', authenticate, searchSoundtrack, searchSong, getFavorites, (req, res) => {
   res.render('soundtrack/ost', {
     user: res.user,
     tracks: res.results || [],
-    favorites: res.favorites || []
+    films: res.answers || [],
+    favorites: res.favorites || [],
   });
 });
 

@@ -3,35 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Surround Sound </title>
+  <title>Surround Sound</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <h1>surround sound</h1>
 
-    <h2>tunes</h2>
+    <h2>SOUNDTRACK OST</h2>
       <div id="again">
-        <a id="searchAgain" href="/home">Search for another movie soundtrack</a>
+        <a id="searchAgain" href="/main">Search for another movie soundtrack</a>
       </div>
-      <div id="header">
-        <form action="/home" id="searchFormPost" method="post">
-        </form>
-      </div>
-      <div class="flexContainer">
-            <% tracks.forEach((one) => {%>
-              <div class="box">
-                <details>
-                  <summary>Song: <%= one.name %></summary>
-                  <summary>Artist: <%= one.artist.name %></summary>
-                  <summary>Scene: <%= one.scene %></summary>
-                  <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
-                </details>
-              </div>
-            <% }) %>
-      </div>
-<div>
-THIS HERE IS THE BREAK
-</div>
+
+    <h2>SOUNDTRACK OST</h2>
+      <form action="/search" id="firstSearch" method="post">
+      </form>
+
+    <h2>SOUNDTRACK OST</h2>
+    <div class="flexContainer">
+      <% tracks.forEach((one) => {%>
+        <div class="box">
+            <details>
+              <summary>Song: <%= one.name %></summary>
+              <summary>Artist: <%= one.artist.name %></summary>
+              <summary>Scene: <%= one.scene %></summary>
+              <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
+            </details>
+        </div>
+      <% }) %>
+    </div>
 
 </body>
 </html>

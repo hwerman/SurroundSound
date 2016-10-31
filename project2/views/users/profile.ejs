@@ -9,16 +9,13 @@
   <body>
     <div id="profileBox">
       <h1>THIS IS THE USERS / PROFILE EJS PAGE.</h1>
-
       <h1>Welcome, <%= user.username %>!</h1>
         <button class="btn">
           <a href="/soundtrack">Search for a soundtrack</a>
         </button>
-
         <form action="/auth?_method=DELETE" method="post">
-          <input type="submit" value="Logout">
+          <input type="submit" name="cinema" value="Logout">
         </form>
-
     </div>
   </body>
 </html>
