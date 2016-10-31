@@ -4,6 +4,7 @@ const { searchSoundtrack } = require('../services/services');
 const { searchSong }       = require('../services/services');
 const { getFavorites,
         saveFavorites,
+        changeFavorites,
         deleteFavorites } = require('../models/favorites');
 
 router.get('/', authenticate, (req, res) => {
@@ -24,14 +25,18 @@ router.post('/search', authenticate, searchSong, getFavorites, (req, res) => {
   });
 });
 
-// router.post('/search', authenticate, searchSoundtrack, searchSong, getFavorites, (req, res) => {
-//   res.render('soundtrack/ost', {
+// router.get('/edit/:id', obtainFavorites, (req, res) => {
+//   res.render('soundtrack/edit' , {
 //     user: res.user,
 //     tracks: res.results || [],
-//     films: res.answers || [],
+//     results: res.results || [],
 //     favorites: res.favorites || [],
-//   });
-// });
+//   })
+// })
+
+router.put('/:id', changeFavorites, (req, res) => {
+  res.redirect('soundtrack/main')
+});
 
 router.post('/favorites', saveFavorites, (req, res) => {
   res.redirect('/soundtrack');

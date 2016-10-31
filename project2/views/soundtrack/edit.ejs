@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -8,12 +8,9 @@
   <link href="https://fonts.googleapis.com/css?family=Cormorant" rel="stylesheet">
 </head>
 <body>
-  <div class="centerBox">
-  <h2>Find a soundtrack</h2>
-      <form action="/soundtrack/search" class="formz" method="POST">
-        <input type="text" name="cinema" placeholder="Enter the film"><br>
-        <input type="submit" value="Go">
-      </form>
-</div>
+  <form action="/<%= fave._id %>?_method=PUT" class="formz" method="POST">
+    <input type="text" name="one.name" value="<%= one.name %>">
+    <input type="submit" value="Update">
+    </form>
 </body>
 </html>

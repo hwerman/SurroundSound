@@ -5,20 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Surround Sound</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant" rel="stylesheet">
 </head>
 <body>
-  <h1>surround sound</h1>
+  <div id="topBox">
+    <h1>surround sound</h1>
       <div id="again">
         <a id="searchAgain" href="/soundtrack/">Search for another movie soundtrack</a>
       </div>
+      </div>
       <div id="flexContainer">
-      <div id ="trackContainer">
+      <div id="trackContainer">
         <% tracks.forEach((one) => {%>
           <div class="box">
             <details>
               <summary>Song: <%= one.name %></summary>
                 <p>Artist: <%= one.artist.name %></p>
                 <p>Scene: <%= one.scene %></p>
+                <a href="/edit/<%= one._id %>">edit</a><br>
                 <% if (one.preview_url && one.preview_url !== '') { %>
                   <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
                 <% } %>

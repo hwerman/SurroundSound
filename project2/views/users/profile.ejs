@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Surround Sound </title>
     <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant" rel="stylesheet">
+
 </head>
   <body>
-    <div id="profileBox">
-      <h1>THIS IS THE USERS / PROFILE EJS PAGE.</h1>
-      <h1>Welcome, <%= user.username %>!</h1>
+    <div id="profileBox" class="centerBox">
+      <h1>Welcome, <%= user.username %>.</h1>
         <button class="btn">
-          <a href="/soundtrack">Search for a soundtrack</a>
+          <a href="/soundtrack">Let's get started.</a>
         </button>
-        <form action="/auth?_method=DELETE" class="formz" method="POST">
+        <form action="/auth?_method=DELETE" class="formz" id="logOut" method="POST">
           <input type="submit" name="cinema" value="Logout">
         </form>
     </div>

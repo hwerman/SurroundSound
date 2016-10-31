@@ -1,32 +1,54 @@
 *{
-  font-family: helvetica;
-  background-color: #000000;
-  color: #FFFFFF;
+  font-family: 'Cormorant', serif;
 }
 
-.formz{
-
+body{
+  background-image: url(/filmwheels.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#flexContainer{
+.first{
+  color: #000000;
+}
+
+h1{
+  font-size: 48px;
+}
+
+/*#flexContainer{
   display: flex;
+  flex-wrap: wrap;
   align-content: center;
-}
+}*/
 
-#trackContainer{
+/*#trackContainer{
   display: flex-wrap;
   width: 60%;
+  margin: 150px;
+  overflow: scroll;
+  align-self: center;
 }
 
 #faveContainer{
   display: flex-wrap;
   width: 40%;
   border: 3px solid #ffffff;
-}
+  align-self: center;
+}*/
 
 .box{
 
 }
+
+
+.formz{
+
+}
+
+/*#topBox{
+  position: fixed;
+}*/
 
 .preview{
 
@@ -37,16 +59,37 @@
 }
 
 .btn{
-
+  background-color: #1C0800;
+  font-family: arial;
+  margin-top: 7vh;
+  width: 500px;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-#welcomeBox{
-  width: 400px;
-  height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #eeeeee;
+#logOut{
+  margin: 80px auto;
 }
+
+#header{
+  margin: 10vh;
+  font-size: 24px;
+}
+
+.centerBox{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: rgba(0,0,0,.5);
+  height: 80vh;
+  width: 180vh;
+  text-align: center;
+  align-items: center;
+  font-weight: bolder;
+  color: #ffffff;
+  margin: 15vh auto;
+/*  border-radius: 50%;
+*/}
 
 .instru{
 
@@ -66,17 +109,10 @@
 }
 
 a{
-
+  color: #eeeeee;
+  text-decoration: none;
 }
 
-
-
-
-
-
-a{
-  color: #aaaaaa;
-}
 
 #searchForm{
 
@@ -92,30 +128,17 @@ a{
 .formz{
 
 }
-.instru{
-  font-size: 12px;
-}
 
-
-.flexContainer{
-/*  display: flex;
-  flex-direction: row;
-*/}
-
-.box{
+/*.box{
 margin: 10px 5px;
 
-}
-
-.artistName{
-  color: lawngreen;
-}
+}*/
 
 .trackDetail{
   font-weight: bolder;
 }
 
-#searchAgain{
+/*#searchAgain{
   text-decoration-line: none;
   color: #aaaaaa;
 }
@@ -124,6 +147,5 @@ margin: 10px 5px;
   height: 20px;
   width: 300px;
   border: 10px solid #333333;
-  background-color: #333333;
   text-align: center;
-}
+}*/
