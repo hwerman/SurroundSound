@@ -1,7 +1,7 @@
 const { ObjectID } = require('mongodb');
 const { getDB }    = require('../lib/dbConnect.js');
 
-// const dbConnection = 'mongodb://localhost:27017/surroundSound';
+const dbConnection = 'mongodb://localhost:27017/surroundSound';
 
 function getFavorites(req, res, next) {
   // find all favorites for your userId
@@ -28,14 +28,13 @@ function saveFavorites(req, res, next) {
     insertObj[key] = req.body[key];
   }
 
-  // Adding userId to insertObj
-  insertObj.favorites.userId = req.session.userId;
+  insertObj.userId = req.session.userId;
 
   getDB().then((db) => {
     db.collection('favorites')
-      .insert(insertObj.favorites, (insertErr, johnny) => {
+      .insert(insertObj, (insertErr, result) => {
         if (insertErr) return next(insertErr);
-        res.saved = johnny;
+        res.saved = result;
         db.close();
         next();
       });
@@ -50,9 +49,9 @@ function saveFavorites(req, res, next) {
 function deleteFavorites(req, res, next) {
   getDB().then((db) => {
     db.collection('favorites')
-      .findAndRemove({ _id: ObjectID(req.params.id) }, (removeErr, depp) => {
+      .findAndRemove({ _id: ObjectID(req.params.id) }, (removeErr, result) => {
         if (removeErr) return next(removeErr);
-        res.removed = depp;
+        res.removed = result;
         db.close();
         next();
       });

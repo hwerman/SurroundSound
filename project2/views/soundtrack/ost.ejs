@@ -15,22 +15,44 @@
       </div>
 
     <h2>SOUNDTRACK OST</h2>
-      <form action="/soundtrack/search" id="firstSearch" method="post">
-      </form>
 
     <h2>SOUNDTRACK OST</h2>
-    <div class="flexContainer">
+    <div id="flexContainer">
       <% tracks.forEach((one) => {%>
         <div class="box">
             <details>
               <summary>Song: <%= one.name %></summary>
-              <summary>Artist: <%= one.artist.name %></summary>
-              <summary>Scene: <%= one.scene %></summary>
-              <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
+              <p>Artist: <%= one.artist.name %></p>
+              <p>Scene: <%= one.scene %></p>
+              <% if (one.preview_url && one.preview_url !== '') { %>
+                <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
+              <% } %>
             </details>
+
+            <form action="/soundtrack/favorites" class="formz" method="POST">
+              <input type="hidden" name="name" value="<%= one.name %>">
+              <input type="hidden" name="artist_name" value="<%= one.artist.name %>">
+              <input type="hidden" name="scene" value="<%= one.scene %>">
+              <input type="hidden" name="preview_url" value="<%= one.preview_url %>">
+              <input type="submit" value="SAVE">
+            </form>
+            name of each input - correlates with the structure you save in the mongodb
         </div>
       <% }) %>
     </div>
+
+    <div id ="faveContainer">
+      <h2>Results</h2>
+        <% favorites.forEach((fave) => { %>
+          <div class="fave">
+            <p><%= fave.name %></p>
+            <p><%= fave.scene %></p>
+            <form action="/soundtrack/favorites/<%= fave._id %>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete">
+            </form>
+          </div>
+      <% }) %>
+      </div>
 
 </body>
 </html>

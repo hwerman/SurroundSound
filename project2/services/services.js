@@ -27,27 +27,27 @@ const client = new Client({});
 
 //THE NEXT NINE LINES WORK TO GET ALL OF THE FILMS LISTED
 //also searchSoundtrack and searchSong are based on the formatting of the built in functions for the tunefind API
- function searchSoundtrack(req, res, next) {
-  console.log('operating');
+//  function searchSoundtrack(req, res, next) {
+//   console.log('operating');
 
-  client.movies(function (err, film) {
-    if (err) {
-      return console.log(err);
-    }
-    res.answers = film.movies;
-    return next();
-  })
-    .catch((err) => {
-      res.error = err;
-      next();
-    });
-}
+//   client.movies(function (err, film) {
+//     if (err) {
+//       return console.log(err);
+//     }
+//     res.answers = film.movies;
+//     return next();
+//   })
+//     .catch((err) => {
+//       res.error = err;
+//       next();
+//     });
+// }
 
 function searchSong(req, res, next){
   console.log('song searching');
-  console.log('query: ', req.query.cinema);
+  console.log('query: ', req.body.cinema);
 
-  client.movie(req.query.cinema)//client.movie(req.query.search) //HJW this points to the name of the input of the form in ejs file
+  client.movie(req.body.cinema)//client.movie(req.query.search) //HJW this points to the name of the input of the form in ejs file
     .then(function (film) {
       console.log(film.songs);
       console.log('film:', film);
@@ -62,7 +62,7 @@ function searchSong(req, res, next){
 }
 
 module.exports = {
-  searchSoundtrack,
+  // searchSoundtrack,
   searchSong,
   // filterQueryString,
   // fixUrl,

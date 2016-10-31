@@ -3,9 +3,9 @@ const dotEnv          = require('dotenv').config({silent: true});
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
-const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
@@ -32,9 +32,9 @@ app.use(session({
 }));
 
 app.use(logger('dev'));
+app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(methodOverride('_method'));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));

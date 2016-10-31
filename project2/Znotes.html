@@ -324,3 +324,62 @@ was in index.js route:
   </div>
   <a href="/users/profile">Home</a>
 
+
+
+
+    <div id="searchContainer">
+      <h2>Search Results:</h2>
+      <% results.forEach((item) => { %>
+        <div class="search-results">
+          <p><%= item.name %></p>
+          <p><%= item.artist.name %></p>
+          <form action="/soundtrack/search" method="POST">
+            <input type="hidden" name="favorite[name]" value="<%= item.name %>">
+            <input type="hidden" name="favorite[artist.name]" value="<%= item.artist.name %>">
+            <input type="hidden" name="favorite[scene]" value="<%= item.scene %>">
+            <input type="submit" value="SAVE">
+          </form>
+        </div>
+      <% }) %>
+    </div>
+    <a href="/users/profile">Home</a>
+
+
+
+
+OST ejs
+ <div id="favorites-container">
+    <h2><%= user.username %>'s Favorites:</h2>
+    <% favorites.forEach((fave) => { %>
+      <div class="fave">
+        <p><%= fave.artistName %></p>
+        <p><%= fave.collectionName %></p>
+        <form action="/soundtrack/favorites/<%= fave._id %>?_method=DELETE" method="post">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+    <% }) %>
+  </div>
+  <div id="search-results-container">
+    <h2>Search Results:</h2>
+    <% results.forEach((album) => { %>
+      <div class="search-results">
+        <p><%= album.artistName %></p>
+        <p><%= album.collectionName %></p>
+        <form action="/music/favorites" method="POST">
+          <input type="hidden" name="favorite[collectionName]" value="<%= album.collectionName %>">
+          <input type="hidden" name="favorite[artistName]" value="<%= album.artistName %>">
+          <input type="hidden" name="favorite[artworkUrl100]" value="<%= album.artworkUrl100 %>">
+          <input type="submit" value="SAVE">
+        </form>
+      </div>
+    <% }) %>
+  </div>
+
+
+               <form action="/music/favorites" method="POST">
+                <input type="hidden" name="favorite[name]" value="<%= album.collectionName %>">
+                <input type="hidden" name="favorite[artist.name]" value="<%= album.artistName %>">
+                <input type="hidden" name="favorite[scene]" value="<%= album.artworkUrl100 %>">
+                <input type="submit" value="SAVE">
+            </form>
