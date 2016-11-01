@@ -61,23 +61,29 @@ function deleteFavorites(req, res, next) {
   return false;
 }
 
-// function obtainFavorites(req, res, next) {
-//   db.collection('favorites')
-//   .findOne({_id: ObjectID(req.params.id) }, (findErr, result)=> {
-//     if (findErr) return next(findErr);
+function obtainFavorites(req, res, next){
+  getDB().then((db) => {
+  db.collection('favorites')
+  .findOne({_id: ObjectID(req.params.id) }, (findErr, result)=> {
+    if (findErr) return next(findErr);
 
-//     res.result =
-//   })
-// }
+    res.obtained = result;
+    db.close();
+    return next();
+  });
+  return false;
+});
+  return false;
+}
 
 function changeFavorites(req, res, next){
   getDB().then((db) => {
   db.collection('favorites')
   .findAndModify({_id: ObjectID(req.params.id) }, [],
-  { $set: req.body.johnny }, { new: true }, (updateErr, result) => {
+  { $set: req.body.editObj }, { new: true }, (updateErr, result) => {
     if (updateErr) return next(updateErr);
 
-    res.updated = result;
+    res.changed = result;
     db.close();
     return next();
   });
@@ -86,6 +92,4 @@ function changeFavorites(req, res, next){
 return false;
 }
 
-
-module.exports = { getFavorites, saveFavorites, deleteFavorites, changeFavorites }
-  // obtainFavorites };
+module.exports = { getFavorites, saveFavorites, deleteFavorites, changeFavorites, obtainFavorites };

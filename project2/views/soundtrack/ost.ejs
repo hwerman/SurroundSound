@@ -8,25 +8,30 @@
   <link href="https://fonts.googleapis.com/css?family=Cormorant" rel="stylesheet">
 </head>
 <body>
-  <div id="topBox">
-    <h1>surround sound</h1>
-      <div id="again">
-        <a id="searchAgain" href="/soundtrack/">Search for another movie soundtrack</a>
-      </div>
-      </div>
-      <div id="flexContainer">
+  <div id="ostBox" class="centerBox">
+
+    <div id="topBox">
+      <h1>surround sound</h1>
+        <div id="again">
+          <a id="searchAgain" href="/soundtrack/">Search for another movie soundtrack</a>
+        </div>
+    </div>
+
       <div id="trackContainer">
         <% tracks.forEach((one) => {%>
           <div class="box">
+            <% if (one.name) { %>
             <details>
               <summary>Song: <%= one.name %></summary>
                 <p>Artist: <%= one.artist.name %></p>
                 <p>Scene: <%= one.scene %></p>
-                <a href="/edit/<%= one._id %>">edit</a><br>
+                <a href="/soundtrack/edit/<%= one._id %>">edit</a><br>
+
                 <% if (one.preview_url && one.preview_url !== '') { %>
                   <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
                 <% } %>
             </details>
+                <% } %>
             <form action="/soundtrack/favorites" class="formz" method="POST">
               <input type="hidden" name="name" value="<%= one.name %>">
               <input type="hidden" name="artist_name" value="<%= one.artist.name %>">
@@ -37,7 +42,8 @@
           </div>
         <% }) %>
       </div>
-      <div id ="faveContainer">
+
+    <div id ="faveContainer">
         <h2>My Collection</h2>
           <% favorites.forEach((fave) => { %>
             <div class="fave">
@@ -55,6 +61,9 @@
             </div>
           <% }) %>
       </div>
-      </div>
+
+    </div>
+
+
 </body>
 </html>

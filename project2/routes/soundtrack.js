@@ -5,6 +5,7 @@ const { searchSong }       = require('../services/services');
 const { getFavorites,
         saveFavorites,
         changeFavorites,
+        obtainFavorites,
         deleteFavorites } = require('../models/favorites');
 
 router.get('/', authenticate, (req, res) => {
@@ -25,17 +26,14 @@ router.post('/search', authenticate, searchSong, getFavorites, (req, res) => {
   });
 });
 
-// router.get('/edit/:id', obtainFavorites, (req, res) => {
-//   res.render('soundtrack/edit' , {
-//     user: res.user,
-//     tracks: res.results || [],
-//     results: res.results || [],
-//     favorites: res.favorites || [],
-//   })
-// })
+router.get('/edit/:id', obtainFavorites, (req, res) => {
+  res.render('soundtrack/edit', {
+    one: res.obtained,
+  });
+});
 
-router.put('/:id', changeFavorites, (req, res) => {
-  res.redirect('soundtrack/main')
+router.put('/edit', changeFavorites, (req, res) => {
+  res.redirect('/search')
 });
 
 router.post('/favorites', saveFavorites, (req, res) => {
@@ -46,7 +44,5 @@ router.post('/favorites', saveFavorites, (req, res) => {
 router.delete('/favorites/:id', deleteFavorites, (req, res) => {
   res.redirect('/soundtrack');
 });
-
-
 
 module.exports = router;
