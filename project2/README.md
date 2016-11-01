@@ -38,12 +38,11 @@ The user can inspect each song that is listed and if there is a preview url avai
 [!](https://git.generalassemb.ly/storage/user/28/files/e8a8e5f8-9c29-11e6-840f-8e514c08a4cf)
 [!](https://git.generalassemb.ly/storage/user/28/files/f57252e2-9c29-11e6-98de-1de8aedb1fcc)
 
-Unsolved issues:
+Unsolved issues & potential further improvements:
 - Rerouting the saveFavorites and deleteFavorites to stay on the ost page with the new info rendered
 - Setting the movie search as a get so that the ost page can grab that info and display it on the page - ie 'Tunes from [x]' when users search 'x'
 - Fixing the css scroll functions so the subheadings remain in place
-
-Potential future improvements:
-- Link another API to render the images of the movies featured
-- Error alert for when movie is not available
+- Improvement: link another API to render the images of the movies featured
+- Improvement: error alert for when movie is not available
+- Improvement: allow user to edit the scene in personal collection instead of name
 

@@ -1,3 +1,5 @@
+//this file is derived from the user-auth exercise provided by Rafa Pacas (@rapala61) and Bobby King (@gittheking) at General Assembly.
+
 const express = require('express');
 const indexRouter = express.Router();
 const dbService = require('../services/services');

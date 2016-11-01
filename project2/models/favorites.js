@@ -1,3 +1,5 @@
+//this file is derived from the user-auth exercise provided by Rafa Pacas (@rapala61) and Bobby King (@gittheking) at General Assembly.
+
 //getFavorites, deleteFavorites and saveFavorites functions are derived from the user-auth exercise provided by Rafa Pacas (@rapala61) and Bobby King (@gittheking) at General Assembly.
 
 

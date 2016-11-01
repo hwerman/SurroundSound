@@ -10,22 +10,7 @@ const user = process.env.TUNEFIND_USERNAME;
 const pass = process.env.TUNEFIND_PASSWORD;
 const client = new Client({});
 
-// function filterQueryString (req, res, next){
-//   const filterObject = {};
-//   const quer = req.query;
-
-//   if ('id' in quer) filterObject.id = new RegExp(`\\b${quer.id}`, 'i');
-
-//   res.filteredQueryParams = filterObject;
-//   return next();
-// };
-
-// function fixUrl(){
-//   const $inputField = $('input');
-//   $inputField.val().split('-').join(' ');
-// }
-
-//THE NEXT NINE LINES WORK TO GET ALL OF THE FILMS LISTED
+//the next nine lines work to get all of the films listed
 //also searchSoundtrack and searchSong are based on the formatting of the built in functions for the tunefind API
 //  function searchSoundtrack(req, res, next) {
 //   console.log('operating');
@@ -55,32 +40,8 @@ function searchSong(req, res, next){
     return next();
 })
     .catch(console.log.bind(console))
-    // .catch((err) => {
-    //   res.error = err;
-    //   next();
-    // })
 }
 
 module.exports = {
-  // searchSoundtrack,
   searchSong,
-  // filterQueryString,
-  // fixUrl,
-  // searchMovie,
-  // searchSongs,
 };
-
-// function searchMusic(req, res, next) {
-//   fetch(`${API_URL}term=${req.body.searchTerm}&entity=album&medium=music`)
-//   .then(r => r.json())
-//   .then((albums) => {
-//     res.results = albums.results;
-//     next();
-//   })
-//   .catch((err) => {
-//     res.error = err;
-//     next();
-//   });
-// }
-
-// module.exports = { searchMusic }

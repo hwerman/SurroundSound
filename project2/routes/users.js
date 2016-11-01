@@ -1,3 +1,5 @@
+//this file is derived from the user-auth exercise provided by Rafa Pacas (@rapala61) and Bobby King (@gittheking) at General Assembly.
+
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const express           = require('express');
