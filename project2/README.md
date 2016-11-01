@@ -33,10 +33,10 @@ The user can inspect each song that is listed and if there is a preview url avai
 - Mongodb
 
 ###Wireframes
-[!](https://git.generalassemb.ly/storage/user/28/files/d037589c-9c29-11e6-866d-7ac413250c1a)
-[!](https://git.generalassemb.ly/storage/user/28/files/dc23affc-9c29-11e6-9307-b3b1d71812a5)
-[!](https://git.generalassemb.ly/storage/user/28/files/e8a8e5f8-9c29-11e6-840f-8e514c08a4cf)
-[!](https://git.generalassemb.ly/storage/user/28/files/f57252e2-9c29-11e6-98de-1de8aedb1fcc)
+[Wireframe 1](https://git.generalassemb.ly/storage/user/28/files/d037589c-9c29-11e6-866d-7ac413250c1a)
+[Wireframe 2](https://git.generalassemb.ly/storage/user/28/files/dc23affc-9c29-11e6-9307-b3b1d71812a5)
+[Wireframe 3](https://git.generalassemb.ly/storage/user/28/files/e8a8e5f8-9c29-11e6-840f-8e514c08a4cf)
+[Wireframe 4](https://git.generalassemb.ly/storage/user/28/files/f57252e2-9c29-11e6-98de-1de8aedb1fcc)
 
 Unsolved issues & potential further improvements:
 - Rerouting the saveFavorites and deleteFavorites to stay on the ost page with the new info rendered
