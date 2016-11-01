@@ -1,15 +1,18 @@
+//getFavorites, deleteFavorites and saveFavorites functions are derived from the user-auth exercise provided by Rafa Pacas (@rapala61) and Bobby King (@gittheking) at General Assembly.
+
+
 const { ObjectID } = require('mongodb');
 const { getDB }    = require('../lib/dbConnect.js');
 
 const dbConnection = 'mongodb://localhost:27017/surroundSound';
 
+//access saved songs from this specific user (with userId)
 function getFavorites(req, res, next) {
-  // find all favorites for your userId
   getDB().then((db) => {
     db.collection('favorites')
       .find({ userId: { $eq: req.session.userId } })
       .toArray((toArrErr, data) => {
-        if(toArrErr) return next(toArrErr);
+        if (toArrErr) return next(toArrErr);
         res.favorites = data;
         db.close();
         next();
@@ -19,16 +22,18 @@ function getFavorites(req, res, next) {
   return false;
 }
 
+//to save new songs to user's collection
 function saveFavorites(req, res, next) {
   // creating an empty object for the insertObj
   const insertObj = {};
 
+  //req.body used for post
   // copying all of req.body into insertObj
   for(key in req.body) {
     insertObj[key] = req.body[key];
   }
 
-  // Adding userId to insertObj
+  // adding userId to insertObj
   insertObj.userId = req.session.userId;
 
   getDB().then((db) => {
@@ -64,7 +69,7 @@ function deleteFavorites(req, res, next) {
 function obtainFavorites(req, res, next){
   getDB().then((db) => {
   db.collection('favorites')
-  .findOne({_id: ObjectID(req.params.id) }, (findErr, result)=> {
+  .findOne({_id: ObjectID(req.params.id) }, (findErr, result) => {
     if (findErr) return next(findErr);
 
     res.obtained = result;
@@ -80,7 +85,7 @@ function changeFavorites(req, res, next){
   getDB().then((db) => {
   db.collection('favorites')
   .findAndModify({_id: ObjectID(req.params.id) }, [],
-  { $set: req.body.editObj }, { new: true }, (updateErr, result) => {
+  { $set: {name:req.body.editObj }}, { new: true }, (updateErr, result) => {
     if (updateErr) return next(updateErr);
 
     res.changed = result;
@@ -92,4 +97,4 @@ function changeFavorites(req, res, next){
 return false;
 }
 
-module.exports = { getFavorites, saveFavorites, deleteFavorites, changeFavorites, obtainFavorites };
+module.exports = { getFavorites, saveFavorites, deleteFavorites, obtainFavorites, changeFavorites };

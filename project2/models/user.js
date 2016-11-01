@@ -1,3 +1,6 @@
+//this file mirrors the user-auth exercise provided by Rafa Pacas (@rapala61) and Bobby King (@gittheking) at General Assembly.
+
+
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 /* eslint no-param-reassign: ["error", { "props": false }] */
 
@@ -12,7 +15,7 @@ function createUser(req, res, next) {
     username: req.body.user.username,
     email: req.body.user.email,
 
-    // Store hashed password
+    // store hashed password
     password: bcrypt.hashSync(req.body.user.password, CINEMATOGRAPHY)
   };
 

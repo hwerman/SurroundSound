@@ -28,12 +28,12 @@ router.post('/search', authenticate, searchSong, getFavorites, (req, res) => {
 
 router.get('/edit/:id', obtainFavorites, (req, res) => {
   res.render('soundtrack/edit', {
-    one: res.obtained,
+    fave: res.obtained,
   });
 });
 
-router.put('/edit', changeFavorites, (req, res) => {
-  res.redirect('/search')
+router.put('/:id', changeFavorites, (req, res) => {
+  res.redirect('/soundtrack')
 });
 
 router.post('/favorites', saveFavorites, (req, res) => {

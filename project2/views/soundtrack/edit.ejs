@@ -9,10 +9,11 @@
 </head>
 <body>
   <div class="centerBox">
-  <form action="soundtrack/edit/<%= one._id %>?_method=PUT" class="formz" method="POST">
-    <input type="text" name="editObj" value="<%= one.name %>">
-    <input type="submit" value="Update">
-    </form>
-    </div>
+    <h2>Personalize the song title for your collection.</h2>
+      <form action="/soundtrack/<%= fave._id %>?_method=PUT" class="formz" method="POST">
+        <input type="text" name="editObj" value="<%= fave.name %>">
+        <input type="submit" value="Update">
+      </form>
+  </div>
 </body>
 </html>

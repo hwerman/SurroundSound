@@ -18,15 +18,16 @@
     </div>
 
       <div id="trackContainer">
+        <h2 class="subhs">Tunes:</h2>
         <% tracks.forEach((one) => {%>
           <div class="box">
             <% if (one.name) { %>
             <details>
-              <summary>Song: <%= one.name %></summary>
-                <p>Artist: <%= one.artist.name %></p>
-                <p>Scene: <%= one.scene %></p>
-                <a href="/soundtrack/edit/<%= one._id %>">edit</a><br>
-
+              <summary><%= one.name %></summary>
+                <p class="deet">Artist: <%= one.artist.name %></p>
+                <% if (one.scene && one.scene !== '') { %>
+                <p class="deet">Scene: <%= one.scene %></p>
+                <% } %>
                 <% if (one.preview_url && one.preview_url !== '') { %>
                   <a class ="preview" href="<%= one.preview_url %>">Preview song</a>
                 <% } %>
@@ -44,13 +45,14 @@
       </div>
 
     <div id ="faveContainer">
-        <h2>My Collection</h2>
+        <h2 class="subhs">My Collection</h2>
           <% favorites.forEach((fave) => { %>
             <div class="fave">
               <details>
-              <summary>Song: <%= fave.name %></summary>
-                <p>Artist: <%= fave.artist_name %></p>
-                <p>Scene: <%= fave.scene %></p>
+              <summary><%= fave.name %></summary>
+                <p class="deet">Artist: <%= fave.artist_name %></p>
+                <p class="deet">Scene: <%= fave.scene %></p>
+                <p class="deet"><a href="/soundtrack/edit/<%= fave._id %>">Edit</a><p>
                 <% if (fave.preview_url && fave.preview_url !== '') { %>
                   <a class ="preview" href="<%= fave.preview_url %>">Preview song</a>
                 <% } %>
@@ -61,9 +63,7 @@
             </div>
           <% }) %>
       </div>
-
     </div>
-
 
 </body>
 </html>

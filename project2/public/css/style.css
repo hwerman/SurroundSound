@@ -8,12 +8,11 @@ body{
   background-size: cover;
 }
 
-.first{
-  color: #000000;
-}
-
 h1{
   font-size: 48px;
+}
+.first{
+  color: #000000;
 }
 
 .centerBox{
@@ -22,7 +21,7 @@ h1{
   flex-wrap: nowrap;
   background: rgba(0,0,0,.5);
   height: 80vh;
-  width: 180vh;
+  width: 100%;
   text-align: center;
   align-items: center;
   font-weight: bolder;
@@ -33,6 +32,9 @@ h1{
 
 #ostBox{
   display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  align-items: justify;
 }
 
 #trackContainer{
@@ -43,8 +45,9 @@ h1{
   align-items: left;
   text-align: left;
   height: auto;
-  width: 40%;
+  width: 60%;
   overflow: auto;
+  margin-top: 140px;
 }
 
 #faveContainer{
@@ -53,9 +56,14 @@ h1{
   flex-wrap: nowrap;
   align-content: left;
   text-align: left;
-  height:auto;
+  height: auto;
   width: 30%;
   overflow: auto;
+  margin-top: 140px;
+}
+
+#topBox{
+  position: absolute;
 }
 
 .btn{
@@ -85,39 +93,30 @@ a{
   align-items: right;
 }
 
-/*#ostBox{
-  display: flex;
-  flex-direction: row;
-}
-*/
-
-/*#trackContainer{
-  display: flex-wrap;
-  width: 60%;
-  margin: 150px;
-  overflow: scroll;
-  align-self: center;
+.preview{
+  color: #6ACEFF;
 }
 
-#faveContainer{
-  display: flex-wrap;
-  width: 40%;
-  border: 3px solid #ffffff;
-  align-self: center;
-}*/
+.deet{
+  margin: 0 auto;
 
+}
+
+.subhs{
+  border-bottom: 2px solid #ffffff;
+
+}
+
+.sub{
+  position: absolute;
+}
 .box{
 
 }
 
-
 .formz{
 
 }
-
-/*#topBox{
-  position: fixed;
-}*/
 
 .preview{
 
@@ -149,19 +148,6 @@ a{
 #searchFormPost{
 
 }
-
-.preview{
-
-}
-.formz{
-
-}
-
-/*.box{
-margin: 10px 5px;
-
-}*/
-
 
 /*#searchAgain{
   text-decoration-line: none;
