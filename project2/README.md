@@ -5,9 +5,9 @@ The app allows the user to search for a movie and view the soundtrack of the mov
 
 ###User Story:
 As a logged in user, you can
-> Search for a movie to find its soundtrack
-> Preview the songs on the soundtrack, for those with available urls
-> Save songs to your personal collection, which you can access as you continue searching for other movie soundtracks
+- Search for a movie to find its soundtrack
+- Preview the songs on the soundtrack, for those with available urls
+- Save songs to your personal collection, which you can access as you continue searching for other movie soundtracks
 
 ###Use Case:
 The user will sign up and log in to begin searching. The user will then enter the name of a movie into the search field. The tunes from the movie will be listed on the lefthand side of the screen and any songs that the user decides to save to the user's personal collection will be listed on the righthand side. There is a link to return to the search page so the user can look up another movie soundtrack.
