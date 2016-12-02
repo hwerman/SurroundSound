@@ -150,6 +150,11 @@ a{
 
 }
 
+#logoutclk{
+  cursor: pointer;
+  background: #000000;
+}
+
 /*#searchAgain{
   text-decoration-line: none;
   color: #aaaaaa;
