@@ -72,6 +72,8 @@ h1{
   width: 500px;
   text-decoration: none;
   font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 #logOut{
