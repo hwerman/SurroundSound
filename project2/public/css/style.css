@@ -150,9 +150,8 @@ a{
 
 }
 
-#logoutclk{
+.smallbtn{
   cursor: pointer;
-  background: #000000;
 }
 
 /*#searchAgain{
