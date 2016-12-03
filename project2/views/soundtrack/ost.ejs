@@ -9,7 +9,6 @@
 </head>
 <body>
   <div id="ostBox" class="centerBox">
-
     <div id="topBox">
       <h1>Your search results</h1>
         <div id="again">
@@ -17,8 +16,11 @@
         </div>
     </div>
 
-      <div id="trackContainer">
+  <div id="trackContainer">
+    <div class="subBox">
         <h2 class="subhs">Tunes:</h2>
+    </div>
+    <div id="trackLeft">
         <% tracks.forEach((one) => {%>
           <div class="box">
             <% if (one.name) { %>
@@ -43,9 +45,13 @@
           </div>
         <% }) %>
       </div>
+    </div>
 
     <div id ="faveContainer">
-        <h2 class="subhs">My Collection</h2>
+      <div class="subBox">
+          <h2 class="subhs">My Collection:</h2>
+      </div>
+      <div id="faveRight">
           <% favorites.forEach((fave) => { %>
             <div class="fave">
               <details>
@@ -62,8 +68,9 @@
               </form>
             </div>
           <% }) %>
+        </div>
+        </div>
       </div>
-    </div>
 
 </body>
 </html>

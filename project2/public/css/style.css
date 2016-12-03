@@ -11,6 +11,7 @@ body{
 h1{
   font-size: 48px;
 }
+
 .first{
   color: #000000;
 }
@@ -37,6 +38,14 @@ h1{
   align-items: justify;
 }
 
+.subBox{
+  margin-top: 140px;
+}
+
+#topBox{
+  position: absolute;
+}
+
 #trackContainer{
   display: flex;
   flex-direction: column;
@@ -44,10 +53,19 @@ h1{
   align-content: left;
   align-items: left;
   text-align: left;
-  height: auto;
   width: 60%;
+}
+
+#trackLeft{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: left;
+  align-items: left;
+  text-align: left;
+  height: auto;
   overflow: auto;
-  margin-top: 140px;
+  margin-top: 10px;
 }
 
 #faveContainer{
@@ -56,14 +74,19 @@ h1{
   flex-wrap: nowrap;
   align-content: left;
   text-align: left;
-  height: auto;
   width: 30%;
-  overflow: auto;
-  margin-top: 140px;
 }
 
-#topBox{
-  position: absolute;
+#faveRight{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: left;
+  align-items: left;
+  text-align: left;
+  height: auto;
+  overflow: auto;
+  margin-top: 10px;
 }
 
 .btn{
@@ -129,16 +152,6 @@ a{
 
 }
 
-
-#favesContainer{
-
-}
-
-#searchContainer{
-
-}
-
-
 #searchForm{
 
 }
@@ -174,10 +187,3 @@ a{
 #deletebt{
   margin-bottom: 4px;
 }
-
-/*#again{
-  height: 20px;
-  width: 300px;
-  border: 10px solid #333333;
-  text-align: center;
-}*/
