@@ -11,7 +11,7 @@
   <div id="ostBox" class="centerBox">
 
     <div id="topBox">
-      <h1>surround sound</h1>
+      <h1>Your search results</h1>
         <div id="again">
           <a id="searchAgain" href="/soundtrack/">Search for another movie soundtrack</a>
         </div>
@@ -33,12 +33,12 @@
                 <% } %>
             </details>
                 <% } %>
-            <form action="/soundtrack/favorites" class="formz" method="POST">
+            <form action="/soundtrack/favorites" method="POST">
               <input type="hidden" name="name" value="<%= one.name %>">
               <input type="hidden" name="artist_name" value="<%= one.artist.name %>">
               <input type="hidden" name="scene" value="<%= one.scene %>">
               <input type="hidden" name="preview_url" value="<%= one.preview_url %>">
-              <input type="submit" value="Add to My Collection">
+              <input type="submit" class="smallbtn" id="addbt" value="Add to My Collection">
             </form>
           </div>
         <% }) %>
@@ -58,7 +58,7 @@
                 <% } %>
               </details>
               <form action="/soundtrack/favorites/<%= fave._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Remove from My Collection">
+                <input type="submit" class="smallbtn" id="deletebt" value="Remove from My Collection">
               </form>
             </div>
           <% }) %>
